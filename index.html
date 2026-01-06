@@ -32,21 +32,54 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-.navbar{
-  background:var(--card-bg);
-  backdrop-filter:blur(12px);
+/* Navbar height control */
+.navbar {
+  min-height: 80px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
-.navbar-brand{
-  font-family:'Playfair Display',serif;
-  font-size:28px;
-  color:var(--gold)!important;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  color: var(--gold) !important;
+}
+
+/* LOGO FIX */
+.navbar-logo {
+  height: 84px;              /* visually bigger */
+  width: auto;
+    clip-path: inset(10% 10% 10% 10%);
+
+  object-fit: contain;
+  transform: scale(1.15);    /* removes empty PNG space */
+}
+
+/* Brand Text */
+.brand-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 66px;
+    transform: scale(1.1);
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
 }
 
 /* TOP CAROUSEL */
 #topCarousel {
-  margin-top: 10px;
-  border-radius: 15px;
+  margin-top: 0px;
+  /* border-radius: 15px; */
   overflow: hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
@@ -61,7 +94,7 @@ body{
   text-align:center;
   background: rgba(0,0,0,0.4);
   padding: 10px 20px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 .carousel-caption h3{
   font-family:'Playfair Display', serif;
@@ -101,6 +134,33 @@ body{
   color:#fff;
 }
 
+
+.section-title h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.section-title .subtitle {
+  display: block;
+  font-family: 'cursive', sans-serif;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.section-title .divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+
 /* SAREE CARD */
 .saree-card{
   border:none;
@@ -137,77 +197,130 @@ body{
 }
 
 /* FOOTER */
-footer{
-  background:var(--dark);
-  color:#ccc;
-  padding-top:40px;
-  padding-bottom:20px;
+.footer {
+  background: #2f2a26;
+  color: #ccc;
 }
 
-footer h6{
-  color:var(--gold);
-  margin-bottom:10px;
-  font-weight:600;
+/* FOOTER LOGO */
+.footer-logo {
+  height: 100px;        /* 🔥 visible logo */
+  width: auto;
 }
 
-footer a{
-  color:#ccc;
-  text-decoration:none;
-  display:block;
-  margin-bottom:6px;
-  transition:0.3s;
+/* FOOTER TEXT */
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 280px;
 }
 
-footer a:hover{
-  color:#fff;
+/* FOOTER TITLES */
+.footer-title {
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-footer p{
-  margin-bottom:0;
-  font-size:0.9rem;
+/* FOOTER LINKS */
+.footer a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 6px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-@media (max-width:768px){
-  footer .row{
-    text-align:center !important;
+.footer a:hover {
+  color: #fff;
+}
+
+/* DIVIDER */
+.footer-divider {
+  border-color: #555;
+  margin: 30px 0;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  color: #aaa;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-logo {
+    height: 200px;
   }
-  footer h6{
-    margin-bottom:8px;
-  }
-  footer a{
-    display:inline-block;
-    margin:0 8px;
+
+  .footer-text {
+    margin: auto;
   }
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-btn {
+.floating-buttons {
   position: fixed;
   bottom: 25px;
   right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* spacing between buttons */
+  z-index: 1000;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  transition: transform 0.3s;
+}
+
+.scroll-btn {
+  background: transparent;  
+  color: var(--gold);       /* arrow color */
+  border: none;             /* remove border */
+  outline: none;            /* remove focus outline */
+  box-shadow: none;         /* remove any shadow */
+  font-size: 28px;          /* bigger arrow */
+  cursor: pointer;
+  display: none;            /* hidden initially */
+  padding: 0;               /* remove default padding */
+}
+.scroll-btn:hover {
+  transform: scale(1.2);
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
   width: 60px;
   height: 60px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  z-index:1000;
-  transition:transform 0.3s, box-shadow 0.3s;
+  background: #25D366;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .whatsapp-btn img {
-  width:35px;
-  height:35px;
+  width: 35px;
+  height: 35px;
 }
+
 .whatsapp-btn:hover {
-  transform:scale(1.1);
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  /* box-shadow: 0 8px 20px rgba(0,0,0,0.4); */
 }
+
 
 .text-gold { color: var(--gold); }
 .modal-body img { border-radius: 12px 12px 0 0; }
 .modal-content { border-radius: 20px; overflow:hidden; }
+
+
+
 </style>
 </head>
 
@@ -216,7 +329,15 @@ footer p{
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">Aameen Emporium</a>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+  <img 
+    src="assets/img/logo1.png" 
+    alt="Aameen Emporium Logo"
+    class="navbar-logo"
+  >
+  <span class="brand-text d-none d-md-inline">Aameen Emporium</span>
+</a>
+
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -251,7 +372,11 @@ footer p{
 
 <!-- COLLECTION -->
 <section id="collection" class="container my-5">
-  <h2 class="text-center mb-5" data-aos="fade-up">Our Collection</h2>
+<div class="section-title text-center mb-5" data-aos="fade-up">
+  <span class="subtitle">Explore</span>
+  <h2>Our Collection</h2>
+  <div class="divider"></div>
+</div>
 
   <ul class="nav nav-pills justify-content-center mb-5 gap-2">
     <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#silk">Silk</button></li>
@@ -268,39 +393,63 @@ footer p{
   </div>
 </section>
 
-<!-- WhatsApp Floating Button -->
-<!-- <a href="https://wa.me/919925852711" target="_blank" class="whatsapp-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-</a> -->
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919925852711?text=Hi%21%20Welcome%20to%20Aameen%20Emporium.%20How%20can%20I%20help%20you%20today%3F" 
-   target="_blank" 
-   class="whatsapp-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-</a>
+<!-- Floating Action Panel -->
+<div class="floating-buttons">
+ 
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919925852711?text=Hi%21%20Welcome%20to%20Aameen%20Emporium.%20How%20can%20I%20help%20you%20today%3F" 
+     target="_blank" 
+     class="floating-btn whatsapp-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+   <!-- Scroll to Top Button (transparent) -->
+  <button id="scrollTopBtn" class="floating-btn scroll-btn" title="Go to top">
+    &#8679;
+  </button>
+</div>
 
 <!-- FOOTER -->
-<footer id="contact" class="pt-5 pb-4">
+<footer id="contact" class="footer pt-5 pb-4">
   <div class="container">
-    <div class="row text-center text-md-start gy-4">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+
+      <!-- BRAND -->
       <div class="col-md-4">
-        <h6>Aameen Emporium</h6>
-        <p>Premium saree boutique with timeless elegance.</p>
+        <img 
+          src="assets/img/logo1.png" 
+          alt="Aameen Emporium Logo" 
+          class="footer-logo mb-3"
+        >
+        <p class="footer-text">
+          Premium saree boutique with timeless elegance.
+        </p>
       </div>
-      <div class="col-md-4">
-        <h6>Shop</h6>
+
+      <!-- SHOP LINKS -->
+      <!-- <div class="col-md-4">
+        <h6 class="footer-title">Shop</h6>
         <a href="#">Silk</a>
         <a href="#">Cotton</a>
         <a href="#">Banarasi</a>
         <a href="#">Bridal</a>
-      </div>
+      </div> -->
+
+      <!-- CONTACT -->
       <div class="col-md-4">
-        <h6>Contact</h6>
-        <p>📞 +91 9925852711<br>📍 India</p>
+        <h6 class="footer-title">Contact</h6>
+        <p>
+          📞 +91 9925852711 <br>
+          📍 India
+        </p>
       </div>
+
     </div>
-    <hr class="my-4 border-secondary">
-    <div class="text-center small">
+
+    <hr class="footer-divider">
+
+    <div class="text-center small footer-copy">
       &copy; 2026 Aameen Emporium. All rights reserved.
     </div>
   </div>
@@ -378,7 +527,23 @@ function loadTopCarousel(items){
       </div>`;
   });
 }
-loadTopCarousel(sareeData.silk.slice(0,4));
+loadTopCarousel(sareeData.carousel.slice(0,4));
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "flex";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
 </script>
 
 </body>
