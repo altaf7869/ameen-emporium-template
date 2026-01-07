@@ -318,6 +318,9 @@ body{
 .text-gold { color: var(--gold); }
 .modal-body img { border-radius: 12px 12px 0 0; }
 .modal-content { border-radius: 20px; overflow:hidden; }
+.modal .btn-close {
+  filter: invert(1);
+}
 
 
 
@@ -460,8 +463,8 @@ body{
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0">
       <div class="modal-body p-0 position-relative">
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        <img src="" id="modalImage" class="w-100" style="object-fit:cover; max-height:600px;">
+        <button type="button" class="btn-close  btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img src="" id="modalImage" class="w-100" style="object-fit:cover; max-height:500px;">
         <div class="p-3 text-center bg-light">
           <h5 id="modalName" class="mb-2"></h5>
           <p id="modalPrice" class="text-gold fw-bold mb-0"></p>

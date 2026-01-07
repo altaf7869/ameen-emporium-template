@@ -25,7 +25,12 @@ const sareeData = {
     {
       name: "Kanchipuram Silk",
       price: "₹7,499",
-      image: "assets/img/silk.png"
+      image: "assets/img/silk1.png"
+    },
+    {
+      name: "Kanchipuram Silk",
+      price: "₹7,499",
+      image: "assets/img/silk2.jpg"
     }
   ],
 
@@ -38,7 +43,12 @@ const sareeData = {
     {
       name: "Printed Cotton Saree",
       price: "₹2,999",
-      image: "assets/img/cotton.png"
+      image: "assets/img/cotton1.jpg"
+    },
+    {
+      name: "Printed Cotton Saree",
+      price: "₹2,999",
+      image: "assets/img/cotton2.png"
     }
   ],
 
@@ -47,6 +57,16 @@ const sareeData = {
       name: "Banarasi Zari Saree",
       price: "₹8,999",
       image: "assets/img/Banarasi.png"
+    },
+     {
+      name: "Banarasi Zari Saree",
+      price: "₹8,999",
+      image: "assets/img/Banarasi1.png"
+    },
+     {
+      name: "Banarasi Zari Saree",
+      price: "₹8,999",
+      image: "assets/img/Banarasi2.png"
     }
   ],
 
@@ -55,6 +75,16 @@ const sareeData = {
       name: "Bridal Designer Saree",
       price: "₹14,999",
       image: "assets/img/wedding.jpg"
+    },
+    {
+      name: "Bridal Designer Saree",
+      price: "₹14,999",
+      image: "assets/img/wedding1.png"
+    },
+    {
+      name: "Bridal Designer Saree",
+      price: "₹14,999",
+      image: "assets/img/wedding2.png"
     }
   ]
 };
